@@ -7,11 +7,13 @@
 
 namespace Spryker\Zed\ProductMeasurementUnit\Dependency\Service;
 
-interface ProductMeasurementUnitToUtilUnitConversionServiceInterface
+interface ProductMeasurementUnitToUtilMeasurementUnitConversionServiceInterface
 {
     /**
      * @param string $fromCode
      * @param string $toCode
+     *
+     * @throws \Spryker\Service\UtilMeasurementUnitConversion\Exception\InvalidMeasurementUnitExchangeException
      *
      * @return float
      */
