@@ -48,4 +48,9 @@
         <property name="quantitySalesUnit" type="ProductMeasurementSalesUnit" />
     </transfer>
 
+    <transfer name="Filter">
+        <property name="limit" type="int" />
+        <property name="offset" type="int" />
+    </transfer>
+
 </transfers>

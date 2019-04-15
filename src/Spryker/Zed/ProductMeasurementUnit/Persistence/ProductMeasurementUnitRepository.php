@@ -7,9 +7,11 @@
 
 namespace Spryker\Zed\ProductMeasurementUnit\Persistence;
 
+use Generated\Shared\Transfer\FilterTransfer;
 use Generated\Shared\Transfer\ProductMeasurementBaseUnitTransfer;
 use Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer;
 use Generated\Shared\Transfer\ProductMeasurementUnitTransfer;
+use Propel\Runtime\Collection\ObjectCollection;
 use Propel\Runtime\Exception\EntityNotFoundException;
 use Spryker\Zed\Kernel\Persistence\AbstractRepository;
 
@@ -26,7 +28,7 @@ class ProductMeasurementUnitRepository extends AbstractRepository implements Pro
     protected const COL_CODE = 'code';
 
     /**
-     * @uses SpyStoreQuery
+     * @module Store
      *
      * @param int $idProductMeasurementSalesUnit
      *
@@ -64,7 +66,7 @@ class ProductMeasurementUnitRepository extends AbstractRepository implements Pro
     }
 
     /**
-     * @uses SpyStoreQuery
+     * @module Store
      *
      * @param int $idProduct
      *
@@ -82,16 +84,8 @@ class ProductMeasurementUnitRepository extends AbstractRepository implements Pro
             ->leftJoinWith('SpyProductMeasurementSalesUnitStore.SpyStore');
 
         $productMeasurementSalesUnitEntityCollection = $query->find();
-        $productMeasurementSalesUnitTransfers = [];
-        $mapper = $this->getFactory()->createProductMeasurementUnitMapper();
-        foreach ($productMeasurementSalesUnitEntityCollection as $productMeasurementSalesUnitEntity) {
-            $productMeasurementSalesUnitTransfers[] = $mapper->mapProductMeasurementSalesUnitTransfer(
-                $productMeasurementSalesUnitEntity,
-                new ProductMeasurementSalesUnitTransfer()
-            );
-        }
 
-        return $productMeasurementSalesUnitTransfers;
+        return $this->getMappedProductMeasurementSalesUnitTransfers($productMeasurementSalesUnitEntityCollection);
     }
 
     /**
@@ -113,16 +107,8 @@ class ProductMeasurementUnitRepository extends AbstractRepository implements Pro
             ->leftJoinWith('SpyProductMeasurementSalesUnitStore.SpyStore');
 
         $productMeasurementSalesUnitEntityCollection = $query->find();
-        $productMeasurementSalesUnitTransfers = [];
-        $mapper = $this->getFactory()->createProductMeasurementUnitMapper();
-        foreach ($productMeasurementSalesUnitEntityCollection as $productMeasurementSalesUnitEntity) {
-            $productMeasurementSalesUnitTransfers[] = $mapper->mapProductMeasurementSalesUnitTransfer(
-                $productMeasurementSalesUnitEntity,
-                new ProductMeasurementSalesUnitTransfer()
-            );
-        }
 
-        return $productMeasurementSalesUnitTransfers;
+        return $this->getMappedProductMeasurementSalesUnitTransfers($productMeasurementSalesUnitEntityCollection);
     }
 
     /**
@@ -169,16 +155,7 @@ class ProductMeasurementUnitRepository extends AbstractRepository implements Pro
 
         $productMeasurementUnitEntityCollection = $query->find();
 
-        $productMeasurementUnitTransfers = [];
-        $mapper = $this->getFactory()->createProductMeasurementUnitMapper();
-        foreach ($productMeasurementUnitEntityCollection as $productMeasurementUnitEntity) {
-            $productMeasurementUnitTransfers[] = $mapper->mapProductMeasurementUnitTransfer(
-                $productMeasurementUnitEntity,
-                new ProductMeasurementUnitTransfer()
-            );
-        }
-
-        return $productMeasurementUnitTransfers;
+        return $this->getMappedProductMeasurementUnitTransfers($productMeasurementUnitEntityCollection);
     }
 
     /**
@@ -215,8 +192,105 @@ class ProductMeasurementUnitRepository extends AbstractRepository implements Pro
             ->leftJoinWith('SpyProductMeasurementSalesUnitStore.SpyStore');
 
         $productMeasurementSalesUnitEntityCollection = $query->find();
+
+        return $this->getMappedProductMeasurementSalesUnitTransfers($productMeasurementSalesUnitEntityCollection);
+    }
+
+    /**
+     * @param \Generated\Shared\Transfer\FilterTransfer $filterTransfer
+     *
+     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer[]
+     */
+    public function findFilteredProductMeasurementUnitTransfers(FilterTransfer $filterTransfer): array
+    {
+        $query = $this->getFactory()
+            ->createProductMeasurementUnitQuery()
+            ->offset($filterTransfer->getOffset())
+            ->limit($filterTransfer->getLimit());
+
+        $productMeasurementUnitEntityCollection = $query->find();
+
+        return $this->getMappedProductMeasurementUnitTransfers($productMeasurementUnitEntityCollection);
+    }
+
+    /**
+     * @param \Generated\Shared\Transfer\FilterTransfer $filterTransfer
+     *
+     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer[]
+     */
+    public function findFilteredProductMeasurementSalesUnitTransfers(FilterTransfer $filterTransfer): array
+    {
+        $productMeasurementSalesUnitIds = $this->findProductMeasurementSalesUnitIdsFilteredByOffsetAndLimit($filterTransfer);
+
+        if (!$productMeasurementSalesUnitIds) {
+            return [];
+        }
+
+        $query = $this->getFactory()
+            ->createProductMeasurementSalesUnitQuery()
+            ->filterByIdProductMeasurementSalesUnit_In($productMeasurementSalesUnitIds)
+            ->joinWithProductMeasurementBaseUnit()
+            ->joinWith('ProductMeasurementUnit salesUnitMeasurementUnit')
+            ->joinWith('ProductMeasurementBaseUnit.ProductMeasurementUnit baseUnitMeasurementUnit')
+            ->leftJoinWithSpyProductMeasurementSalesUnitStore()
+            ->leftJoinWith('SpyProductMeasurementSalesUnitStore.SpyStore');
+
+        $productMeasurementSalesUnitEntityCollection = $query->find();
+
+        return $this->getMappedProductMeasurementSalesUnitTransfers($productMeasurementSalesUnitEntityCollection);
+    }
+
+    /**
+     * @param \Generated\Shared\Transfer\FilterTransfer $filterTransfer
+     *
+     * @return int[]
+     */
+    protected function findProductMeasurementSalesUnitIdsFilteredByOffsetAndLimit(FilterTransfer $filterTransfer): array
+    {
+        $productMeasurementSalesUnitIds = [];
+
+        $query = $this->getFactory()
+            ->createProductMeasurementSalesUnitQuery()
+            ->offset($filterTransfer->getOffset())
+            ->limit($filterTransfer->getLimit());
+
+        foreach ($query->find() as $productMeasurementSalesUnit) {
+            $productMeasurementSalesUnitIds[] = $productMeasurementSalesUnit->getIdProductMeasurementSalesUnit();
+        }
+
+        return $productMeasurementSalesUnitIds;
+    }
+
+    /**
+     * @param \Propel\Runtime\Collection\ObjectCollection|\Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementUnit[] $productMeasurementUnitEntityCollection
+     *
+     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer[]
+     */
+    protected function getMappedProductMeasurementUnitTransfers(ObjectCollection $productMeasurementUnitEntityCollection): array
+    {
+        $productMeasurementUnitTransfers = [];
+        $mapper = $this->getFactory()->createProductMeasurementUnitMapper();
+
+        foreach ($productMeasurementUnitEntityCollection as $productMeasurementUnitEntity) {
+            $productMeasurementUnitTransfers[] = $mapper->mapProductMeasurementUnitTransfer(
+                $productMeasurementUnitEntity,
+                new ProductMeasurementUnitTransfer()
+            );
+        }
+
+        return $productMeasurementUnitTransfers;
+    }
+
+    /**
+     * @param \Propel\Runtime\Collection\ObjectCollection|\Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementSalesUnit[] $productMeasurementSalesUnitEntityCollection
+     *
+     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer[]
+     */
+    protected function getMappedProductMeasurementSalesUnitTransfers(ObjectCollection $productMeasurementSalesUnitEntityCollection): array
+    {
         $productMeasurementSalesUnitTransfers = [];
         $mapper = $this->getFactory()->createProductMeasurementUnitMapper();
+
         foreach ($productMeasurementSalesUnitEntityCollection as $productMeasurementSalesUnitEntity) {
             $productMeasurementSalesUnitTransfers[] = $mapper->mapProductMeasurementSalesUnitTransfer(
                 $productMeasurementSalesUnitEntity,

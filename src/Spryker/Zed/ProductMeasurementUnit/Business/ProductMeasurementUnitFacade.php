@@ -8,6 +8,7 @@
 namespace Spryker\Zed\ProductMeasurementUnit\Business;
 
 use Generated\Shared\Transfer\CartChangeTransfer;
+use Generated\Shared\Transfer\FilterTransfer;
 use Generated\Shared\Transfer\ItemTransfer;
 use Generated\Shared\Transfer\QuoteTransfer;
 use Spryker\Zed\Kernel\Business\AbstractFacade;
@@ -15,6 +16,7 @@ use Spryker\Zed\Kernel\Business\AbstractFacade;
 /**
  * @method \Spryker\Zed\ProductMeasurementUnit\Business\ProductMeasurementUnitBusinessFactory getFactory()
  * @method \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitRepositoryInterface getRepository()
+ * @method \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitEntityManagerInterface getEntityManager()
  */
 class ProductMeasurementUnitFacade extends AbstractFacade implements ProductMeasurementUnitFacadeInterface
 {
@@ -166,5 +168,35 @@ class ProductMeasurementUnitFacade extends AbstractFacade implements ProductMeas
         $this->getFactory()
             ->createProductMeasurementUnitInstaller()
             ->install();
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\FilterTransfer $filterTransfer
+     *
+     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer[]
+     */
+    public function findFilteredProductMeasurementUnitTransfers(FilterTransfer $filterTransfer): array
+    {
+        return $this->getRepository()->findFilteredProductMeasurementUnitTransfers($filterTransfer);
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\FilterTransfer $filterTransfer
+     *
+     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer[]
+     */
+    public function findFilteredProductMeasurementSalesUnitTransfers(FilterTransfer $filterTransfer): array
+    {
+        return $this->getFactory()
+            ->createProductMeasurementSalesUnitReader()
+            ->findFilteredProductMeasurementSalesUnitTransfers($filterTransfer);
     }
 }
