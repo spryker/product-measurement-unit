@@ -64,6 +64,7 @@ interface ProductMeasurementUnitRepositoryInterface
      * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer[]
      */
     public function findFilteredProductMeasurementUnitTransfers(FilterTransfer $filterTransfer): array;
+
     /**
      * @param \Generated\Shared\Transfer\FilterTransfer $filterTransfer
      *
