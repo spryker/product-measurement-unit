@@ -21,14 +21,14 @@ class SingleItemQuantitySalesUnitPersistentCartChangeExpanderPlugin extends Abst
      *
      * @api
      *
-     * @param \Generated\Shared\Transfer\PersistentCartChangeTransfer $persistentCartChangeTransfer
+     * @param \Generated\Shared\Transfer\PersistentCartChangeTransfer $cartChangeTransfer
      * @param array $params
      *
      * @return \Generated\Shared\Transfer\PersistentCartChangeTransfer
      */
-    public function extend(PersistentCartChangeTransfer $persistentCartChangeTransfer, array $params = []): PersistentCartChangeTransfer
+    public function extend(PersistentCartChangeTransfer $cartChangeTransfer, array $params = []): PersistentCartChangeTransfer
     {
         return $this->getClient()
-            ->expandSingleItemQuantitySalesUnitForPersistentCartChange($persistentCartChangeTransfer, $params);
+            ->expandSingleItemQuantitySalesUnitForPersistentCartChange($cartChangeTransfer, $params);
     }
 }
