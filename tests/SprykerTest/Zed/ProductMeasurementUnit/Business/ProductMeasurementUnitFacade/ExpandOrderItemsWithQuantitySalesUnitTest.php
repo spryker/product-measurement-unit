@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\ProductMeasurementUnit\Business;
+namespace SprykerTest\Zed\ProductMeasurementUnit\Business\ProductMeasurementUnitFacade;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\ItemTransfer;
@@ -19,6 +19,7 @@ use Spryker\Zed\Sales\SalesDependencyProvider;
  * @group Zed
  * @group ProductMeasurementUnit
  * @group Business
+ * @group ProductMeasurementUnitFacade
  * @group ExpandOrderItemsWithQuantitySalesUnitTest
  * Add your own group annotations below this line
  */

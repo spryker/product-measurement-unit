@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\ProductMeasurementUnit\Business;
+namespace SprykerTest\Zed\ProductMeasurementUnit\Business\ProductMeasurementUnitFacade;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\ProductConcreteTransfer;
@@ -19,6 +19,7 @@ use Spryker\Shared\Kernel\Transfer\Exception\RequiredTransferPropertyException;
  * @group Zed
  * @group ProductMeasurementUnit
  * @group Business
+ * @group ProductMeasurementUnitFacade
  * @group FilterProductsWithoutMeasurementUnitTest
  * Add your own group annotations below this line
  */

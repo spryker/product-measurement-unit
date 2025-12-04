@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\ProductMeasurementUnit\Business;
+namespace SprykerTest\Zed\ProductMeasurementUnit\Business\ProductMeasurementUnitFacade;
 
 use Codeception\Test\Unit;
 use Generated\Shared\DataBuilder\CartReorderBuilder;
@@ -24,6 +24,7 @@ use SprykerTest\Zed\ProductMeasurementUnit\ProductMeasurementUnitBusinessTester;
  * @group Zed
  * @group ProductMeasurementUnit
  * @group Business
+ * @group ProductMeasurementUnitFacade
  * @group MergeProductMeasurementUnitCartReorderItemsTest
  * Add your own group annotations below this line
  */
