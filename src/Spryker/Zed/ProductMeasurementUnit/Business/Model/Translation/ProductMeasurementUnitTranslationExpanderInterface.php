@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer;
 
 interface ProductMeasurementUnitTranslationExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer
-     */
     public function translateProductMeasurementSalesUnit(
         ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
     ): ProductMeasurementSalesUnitTransfer;

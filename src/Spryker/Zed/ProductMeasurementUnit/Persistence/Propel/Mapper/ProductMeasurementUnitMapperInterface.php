@@ -18,45 +18,21 @@ use Propel\Runtime\Collection\Collection;
 
 interface ProductMeasurementUnitMapperInterface
 {
-    /**
-     * @param \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementSalesUnit $productMeasurementSalesUnitEntity
-     * @param \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer
-     */
     public function mapProductMeasurementSalesUnitTransfer(
         SpyProductMeasurementSalesUnit $productMeasurementSalesUnitEntity,
         ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
     ): ProductMeasurementSalesUnitTransfer;
 
-    /**
-     * @param \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementBaseUnit $productMeasurementBaseUnitEntity
-     * @param \Generated\Shared\Transfer\ProductMeasurementBaseUnitTransfer $productMeasurementBaseUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementBaseUnitTransfer
-     */
     public function mapProductMeasurementBaseUnitTransfer(
         SpyProductMeasurementBaseUnit $productMeasurementBaseUnitEntity,
         ProductMeasurementBaseUnitTransfer $productMeasurementBaseUnitTransfer
     ): ProductMeasurementBaseUnitTransfer;
 
-    /**
-     * @param \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementUnit $productMeasurementUnitEntity
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitTransfer $productMeasurementUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer
-     */
     public function mapProductMeasurementUnitTransfer(
         SpyProductMeasurementUnit $productMeasurementUnitEntity,
         ProductMeasurementUnitTransfer $productMeasurementUnitTransfer
     ): ProductMeasurementUnitTransfer;
 
-    /**
-     * @param \Propel\Runtime\Collection\Collection $productMeasurementUnitEntities
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionTransfer $productMeasurementUnitCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionTransfer
-     */
     public function mapProductMeasurementUnitCollectionTransfer(
         Collection $productMeasurementUnitEntities,
         ProductMeasurementUnitCollectionTransfer $productMeasurementUnitCollectionTransfer

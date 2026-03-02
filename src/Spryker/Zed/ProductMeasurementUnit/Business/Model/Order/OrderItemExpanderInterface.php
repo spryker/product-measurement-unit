@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer;
 
 interface OrderItemExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer $salesOrderItemEntity
-     *
-     * @return \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer
-     */
     public function expandOrderItem(
         ItemTransfer $itemTransfer,
         SpySalesOrderItemEntityTransfer $salesOrderItemEntity

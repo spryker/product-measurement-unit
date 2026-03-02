@@ -16,12 +16,6 @@ use Propel\Runtime\Collection\Collection;
 
 class SalesOrderItemMapper implements SalesOrderItemMapperInterface
 {
-    /**
-     * @param \Orm\Zed\Sales\Persistence\SpySalesOrderItem $salesOrderItem
-     * @param \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer $spySalesOrderItemEntityTransfer
-     *
-     * @return \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer
-     */
     public function mapSalesOrderItemTransfer(
         SpySalesOrderItem $salesOrderItem,
         SpySalesOrderItemEntityTransfer $spySalesOrderItemEntityTransfer
@@ -52,12 +46,6 @@ class SalesOrderItemMapper implements SalesOrderItemMapperInterface
         return $mappedProductMeasurementSalesUnitTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\Sales\Persistence\SpySalesOrderItem $salesOrderItemEntity
-     * @param \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer
-     */
     protected function mapSalesOrderItemEntityToProductMeasurementSalesUnitTransfer(
         SpySalesOrderItem $salesOrderItemEntity,
         ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
@@ -78,11 +66,6 @@ class SalesOrderItemMapper implements SalesOrderItemMapperInterface
         return $productMeasurementSalesUnitTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\Sales\Persistence\SpySalesOrderItem $salesOrderItemEntity
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementBaseUnitTransfer
-     */
     protected function createProductMeasurementBaseUnitTransfer(SpySalesOrderItem $salesOrderItemEntity): ProductMeasurementBaseUnitTransfer
     {
         $productMeasurementBaseUnitTransfer = new ProductMeasurementBaseUnitTransfer();
@@ -93,12 +76,6 @@ class SalesOrderItemMapper implements SalesOrderItemMapperInterface
         return $productMeasurementBaseUnitTransfer;
     }
 
-    /**
-     * @param string|null $productMeasurementUnitName
-     * @param string|null $productMeasurementUnitCode
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer
-     */
     protected function createProductMeasurementUnitTransfer(
         ?string $productMeasurementUnitName,
         ?string $productMeasurementUnitCode = null

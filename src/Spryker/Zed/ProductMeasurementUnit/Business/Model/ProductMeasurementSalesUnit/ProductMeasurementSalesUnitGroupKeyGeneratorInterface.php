@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\ItemTransfer;
 
 interface ProductMeasurementSalesUnitGroupKeyGeneratorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $item
-     *
-     * @return string
-     */
     public function expandItemGroupKey(ItemTransfer $item): string;
 }

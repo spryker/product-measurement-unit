@@ -18,9 +18,6 @@ class ProductMeasurementUnitTranslationExpander implements ProductMeasurementUni
      */
     protected $glossaryFacade;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Dependency\Facade\ProductMeasurementUnitToGlossaryFacadeInterface $glossaryFacade
-     */
     public function __construct(
         ProductMeasurementUnitToGlossaryFacadeInterface $glossaryFacade
     ) {
@@ -41,11 +38,6 @@ class ProductMeasurementUnitTranslationExpander implements ProductMeasurementUni
         return $productMeasurementSalesUnitTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer
-     */
     public function translateProductMeasurementSalesUnit(
         ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
     ): ProductMeasurementSalesUnitTransfer {
@@ -62,11 +54,6 @@ class ProductMeasurementUnitTranslationExpander implements ProductMeasurementUni
         return $productMeasurementSalesUnitTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
-     *
-     * @return void
-     */
     protected function expandSalesUnit(ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer): void
     {
         $quantityMeasurementUnitName = $productMeasurementSalesUnitTransfer
@@ -81,11 +68,6 @@ class ProductMeasurementUnitTranslationExpander implements ProductMeasurementUni
             ->setName($localizedQuantityMeasurementUnitName);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
-     *
-     * @return void
-     */
     protected function expandBaseUnit(ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer): void
     {
         $quantityBaseMeasurementUnitName = $productMeasurementSalesUnitTransfer
@@ -102,11 +84,6 @@ class ProductMeasurementUnitTranslationExpander implements ProductMeasurementUni
             ->setName($localizedQuantityBaseMeasurementUnitName);
     }
 
-    /**
-     * @param string $msg
-     *
-     * @return string
-     */
     protected function translate(string $msg): string
     {
         try {

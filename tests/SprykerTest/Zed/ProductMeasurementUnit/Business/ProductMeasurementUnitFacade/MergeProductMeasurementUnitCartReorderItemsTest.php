@@ -40,9 +40,6 @@ class MergeProductMeasurementUnitCartReorderItemsTest extends Unit
      */
     protected ProductMeasurementUnitBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testMergesMeasurementUnitItemsQuantity(): void
     {
         // Arrange
@@ -75,9 +72,6 @@ class MergeProductMeasurementUnitCartReorderItemsTest extends Unit
         $this->assertSame(2, $orderItemTransfer->getQuantity());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNothingWhenNoItemsWithProductMeasurementUnitProvided(): void
     {
         // Arrange
@@ -106,9 +100,6 @@ class MergeProductMeasurementUnitCartReorderItemsTest extends Unit
         $this->assertCount(2, $cartReorderTransfer->getOrderOrFail()->getItems());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNothingWhenItemsWithProductMeasurementUnitNotRequestedInCartReorderRequestTransfer(): void
     {
         // Arrange
@@ -242,11 +233,6 @@ class MergeProductMeasurementUnitCartReorderItemsTest extends Unit
         ];
     }
 
-    /**
-     * @param int $idSalesOrderItem
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function createOrderItemTransfer(int $idSalesOrderItem): ItemTransfer
     {
         return (new ItemBuilder([

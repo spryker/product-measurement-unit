@@ -40,9 +40,6 @@ class ProductMeasurementUnitBusinessTester extends Actor
 {
     use _generated\ProductMeasurementUnitBusinessTesterActions;
 
-    /**
-     * @return \Generated\Shared\Transfer\SpyProductMeasurementUnitEntityTransfer
-     */
     public function buildRandomProductMeasurementUnit(): SpyProductMeasurementUnitEntityTransfer
     {
         return $this->buildProductMeasurementUnit([
@@ -51,9 +48,6 @@ class ProductMeasurementUnitBusinessTester extends Actor
         ]);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CartChangeTransfer
-     */
     public function createEmptyCartChangeTransfer(): CartChangeTransfer
     {
         return (new CartChangeTransfer())
@@ -64,14 +58,6 @@ class ProductMeasurementUnitBusinessTester extends Actor
             ->setItems(new ArrayObject([]));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartChangeTransfer $cartChangeTransfer
-     * @param int $idProductMeasurementSalesUnit
-     * @param string $sku
-     * @param int $quantity
-     *
-     * @return \Generated\Shared\Transfer\CartChangeTransfer
-     */
     public function addSkuToCartChangeTransfer(
         CartChangeTransfer $cartChangeTransfer,
         int $idProductMeasurementSalesUnit,
@@ -90,13 +76,6 @@ class ProductMeasurementUnitBusinessTester extends Actor
         return $cartChangeTransfer;
     }
 
-    /**
-     * @param int $idProductMeasurementSalesUnit
-     * @param string $sku
-     * @param int $quantity
-     *
-     * @return \Generated\Shared\Transfer\CartChangeTransfer
-     */
     public function createCartChangeTransferWithItem(
         int $idProductMeasurementSalesUnit,
         string $sku,
@@ -118,11 +97,6 @@ class ProductMeasurementUnitBusinessTester extends Actor
             );
     }
 
-    /**
-     * @param int $idProductMeasurementSalesUnit
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer
-     */
     public function createProductMeasurementSalesUnitTransfer(
         int $idProductMeasurementSalesUnit
     ): ProductMeasurementSalesUnitTransfer {
@@ -141,11 +115,6 @@ class ProductMeasurementUnitBusinessTester extends Actor
         return $quantitySalesUnit;
     }
 
-    /**
-     * @param string $stateMachineProcessName
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function createOrderWithProductMeasurementUnits(string $stateMachineProcessName): OrderTransfer
     {
         $quoteTransfer = (new QuoteBuilder())

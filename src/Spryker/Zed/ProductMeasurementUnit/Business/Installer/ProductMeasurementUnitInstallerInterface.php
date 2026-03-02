@@ -9,8 +9,5 @@ namespace Spryker\Zed\ProductMeasurementUnit\Business\Installer;
 
 interface ProductMeasurementUnitInstallerInterface
 {
-    /**
-     * @return void
-     */
     public function install(): void;
 }

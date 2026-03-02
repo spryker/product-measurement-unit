@@ -53,20 +53,10 @@ class ProductMeasurementUnitValidator implements ProductMeasurementUnitValidator
      */
     protected const MESSAGE_PARAM_DEFAULT_PRECISION = 'default_precision';
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository
-     */
     public function __construct(protected ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionRequestTransfer $requestTransfer
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer $responseTransfer
-     * @param array $invalidCodes
-     *
-     * @return void
-     */
     public function validatePrecision(
         ProductMeasurementUnitCollectionRequestTransfer $requestTransfer,
         ProductMeasurementUnitCollectionResponseTransfer $responseTransfer,
@@ -85,13 +75,6 @@ class ProductMeasurementUnitValidator implements ProductMeasurementUnitValidator
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer $productMeasurementUnitCollectionResponseTransfer
-     * @param array $invalidCodes
-     *
-     * @return void
-     */
     public function validateProductMeasurementUnitsExist(
         ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer,
         ProductMeasurementUnitCollectionResponseTransfer $productMeasurementUnitCollectionResponseTransfer,
@@ -111,13 +94,6 @@ class ProductMeasurementUnitValidator implements ProductMeasurementUnitValidator
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer $productMeasurementUnitCollectionResponseTransfer
-     * @param array $invalidCodes
-     *
-     * @return void
-     */
     public function validateProductMeasurementUnitsNotExist(
         ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer,
         ProductMeasurementUnitCollectionResponseTransfer $productMeasurementUnitCollectionResponseTransfer,
@@ -136,11 +112,6 @@ class ProductMeasurementUnitValidator implements ProductMeasurementUnitValidator
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionDeleteCriteriaTransfer $productMeasurementUnitCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer
-     */
     public function validateDeleteCriteria(
         ProductMeasurementUnitCollectionDeleteCriteriaTransfer $productMeasurementUnitCollectionDeleteCriteriaTransfer
     ): ProductMeasurementUnitCollectionResponseTransfer {
@@ -198,11 +169,6 @@ class ProductMeasurementUnitValidator implements ProductMeasurementUnitValidator
         return $productMeasurementUnitCollectionResponseTransfer;
     }
 
-    /**
-     * @param string $code
-     *
-     * @return \Generated\Shared\Transfer\ErrorTransfer
-     */
     protected function createMeasurementUnitCodeNotFoundErrorMessage(string $code): ErrorTransfer
     {
         return (new ErrorTransfer())
@@ -210,11 +176,6 @@ class ProductMeasurementUnitValidator implements ProductMeasurementUnitValidator
             ->setParameters([static::MESSAGE_PARAM_CODE => $code]);
     }
 
-    /**
-     * @param string $code
-     *
-     * @return \Generated\Shared\Transfer\ErrorTransfer
-     */
     protected function createMeasurementUnitInUseErrorMessage(string $code): ErrorTransfer
     {
         return (new ErrorTransfer())
@@ -235,11 +196,6 @@ class ProductMeasurementUnitValidator implements ProductMeasurementUnitValidator
             ->setParameters([static::MESSAGE_PARAM_CODE => $code, static::MESSAGE_PARAM_DEFAULT_PRECISION => $defaultPrecision]);
     }
 
-    /**
-     * @param string $code
-     *
-     * @return \Generated\Shared\Transfer\ErrorTransfer
-     */
     protected function createMeasurementUnitNotFoundErrorMessage(string $code): ErrorTransfer
     {
         return (new ErrorTransfer())
@@ -247,11 +203,6 @@ class ProductMeasurementUnitValidator implements ProductMeasurementUnitValidator
             ->setParameters([static::MESSAGE_PARAM_CODE => $code]);
     }
 
-    /**
-     * @param string $code
-     *
-     * @return \Generated\Shared\Transfer\ErrorTransfer
-     */
     protected function createMeasurementUnitCodeAlreadyExistsErrorMessage(string $code): ErrorTransfer
     {
         return (new ErrorTransfer())

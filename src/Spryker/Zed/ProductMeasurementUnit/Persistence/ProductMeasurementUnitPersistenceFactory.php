@@ -25,49 +25,31 @@ use Spryker\Zed\ProductMeasurementUnit\ProductMeasurementUnitDependencyProvider;
  */
 class ProductMeasurementUnitPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementSalesUnitQuery
-     */
     public function createProductMeasurementSalesUnitQuery(): SpyProductMeasurementSalesUnitQuery
     {
         return SpyProductMeasurementSalesUnitQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementBaseUnitQuery
-     */
     public function createProductMeasurementBaseUnitQuery(): SpyProductMeasurementBaseUnitQuery
     {
         return SpyProductMeasurementBaseUnitQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementUnitQuery
-     */
     public function createProductMeasurementUnitQuery(): SpyProductMeasurementUnitQuery
     {
         return SpyProductMeasurementUnitQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Persistence\Propel\Mapper\ProductMeasurementUnitMapperInterface
-     */
     public function createProductMeasurementUnitMapper(): ProductMeasurementUnitMapperInterface
     {
         return new ProductMeasurementUnitMapper();
     }
 
-    /**
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderItemQuery
-     */
     public function getSalesOrderItemQuery(): SpySalesOrderItemQuery
     {
         return $this->getProvidedDependency(ProductMeasurementUnitDependencyProvider::PROPEL_QUERY_SALES_ORDER_ITEM);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Persistence\Propel\Mapper\SalesOrderItemMapperInterface
-     */
     public function createSalesOrderItemMapper(): SalesOrderItemMapperInterface
     {
         return new SalesOrderItemMapper();

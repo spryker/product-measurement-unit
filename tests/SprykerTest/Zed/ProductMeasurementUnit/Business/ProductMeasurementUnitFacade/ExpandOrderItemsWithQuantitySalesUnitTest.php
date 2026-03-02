@@ -40,9 +40,6 @@ class ExpandOrderItemsWithQuantitySalesUnitTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -54,9 +51,6 @@ class ExpandOrderItemsWithQuantitySalesUnitTest extends Unit
         $this->tester->configureTestStateMachine([static::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderItemsWithQuantitySalesUnitExpandOrderItemsWithQuantitySalesUnit(): void
     {
         // Arrange
@@ -76,9 +70,6 @@ class ExpandOrderItemsWithQuantitySalesUnitTest extends Unit
         $this->assertNotNull($itemTransfers[1]->getQuantitySalesUnit());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderItemsWithQuantitySalesUnitWithoutSalesOrderItemId(): void
     {
         // Act
@@ -90,9 +81,6 @@ class ExpandOrderItemsWithQuantitySalesUnitTest extends Unit
         $this->assertEmpty($itemTransfers[0]->getQuantitySalesUnit());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderItemsWithQuantitySalesUnitWithFakeSalesOrderItemId(): void
     {
         // Act

@@ -17,21 +17,12 @@ class ProductMeasurementUnitDeleter implements ProductMeasurementUnitDeleterInte
 {
     use TransactionTrait;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Business\Validator\ProductMeasurementUnitValidatorInterface $productMeasurementUnitValidator
-     * @param \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitEntityManagerInterface $productMeasurementUnitEntityManager
-     */
     public function __construct(
         protected ProductMeasurementUnitValidatorInterface $productMeasurementUnitValidator,
         protected ProductMeasurementUnitEntityManagerInterface $productMeasurementUnitEntityManager
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionDeleteCriteriaTransfer $productMeasurementUnitCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer
-     */
     public function delete(
         ProductMeasurementUnitCollectionDeleteCriteriaTransfer $productMeasurementUnitCollectionDeleteCriteriaTransfer
     ): ProductMeasurementUnitCollectionResponseTransfer {
@@ -40,11 +31,6 @@ class ProductMeasurementUnitDeleter implements ProductMeasurementUnitDeleterInte
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionDeleteCriteriaTransfer $productMeasurementUnitCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer
-     */
     protected function executeDeleteTransaction(
         ProductMeasurementUnitCollectionDeleteCriteriaTransfer $productMeasurementUnitCollectionDeleteCriteriaTransfer
     ): ProductMeasurementUnitCollectionResponseTransfer {

@@ -57,9 +57,6 @@ use Spryker\Zed\ProductMeasurementUnit\ProductMeasurementUnitDependencyProvider;
  */
 class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Creator\ProductMeasurementUnitCreatorInterface
-     */
     public function createProductMeasurementUnitCreator(): ProductMeasurementUnitCreatorInterface
     {
         return new ProductMeasurementUnitCreator(
@@ -68,9 +65,6 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Updater\ProductMeasurementUnitUpdaterInterface
-     */
     public function createProductMeasurementUnitUpdater(): ProductMeasurementUnitUpdaterInterface
     {
         return new ProductMeasurementUnitUpdater(
@@ -79,9 +73,6 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Deleter\ProductMeasurementUnitDeleterInterface
-     */
     public function createProductMeasurementUnitDeleter(): ProductMeasurementUnitDeleterInterface
     {
         return new ProductMeasurementUnitDeleter(
@@ -90,9 +81,6 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Validator\ProductMeasurementUnitValidatorInterface
-     */
     public function createProductMeasurementUnitValidator(): ProductMeasurementUnitValidatorInterface
     {
         return new ProductMeasurementUnitValidator(
@@ -100,17 +88,11 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Model\ProductMeasurementSalesUnit\ProductMeasurementSalesUnitValueInterface
-     */
     public function createProductMeasurementSalesUnitValue(): ProductMeasurementSalesUnitValueInterface
     {
         return new ProductMeasurementSalesUnitValue();
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Model\ProductMeasurementSalesUnit\ProductMeasurementSalesUnitReaderInterface
-     */
     public function createProductMeasurementSalesUnitReader(): ProductMeasurementSalesUnitReaderInterface
     {
         return new ProductMeasurementSalesUnitReader(
@@ -119,25 +101,16 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Model\ProductMeasurementSalesUnit\ProductMeasurementSalesUnitGroupKeyGeneratorInterface
-     */
     public function createProductMeasurementSalesUnitItemGroupKeyGenerator(): ProductMeasurementSalesUnitGroupKeyGeneratorInterface
     {
         return new ProductMeasurementSalesUnitGroupKeyGenerator();
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Merger\CartReorderItemMergerInterface
-     */
     public function createCartReorderItemMerger(): CartReorderItemMergerInterface
     {
         return new CartReorderItemMerger($this->createProductMeasurementUnitItemExtractor());
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Hydrator\CartReorderItemHydratorInterface
-     */
     public function createCartReorderItemHydrator(): CartReorderItemHydratorInterface
     {
         return new CartReorderItemHydrator(
@@ -147,41 +120,26 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Extractor\ProductMeasurementUnitItemExtractorInterface
-     */
     public function createProductMeasurementUnitItemExtractor(): ProductMeasurementUnitItemExtractorInterface
     {
         return new ProductMeasurementUnitItemExtractor();
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Dependency\Service\ProductMeasurementUnitToUtilMeasurementUnitConversionServiceInterface
-     */
     public function getUtilMeasurementUnitConversionService(): ProductMeasurementUnitToUtilMeasurementUnitConversionServiceInterface
     {
         return $this->getProvidedDependency(ProductMeasurementUnitDependencyProvider::SERVICE_UTIL_MEASUREMENT_UNIT_CONVERSION);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Dependency\Facade\ProductMeasurementUnitToEventFacadeInterface
-     */
     public function getEventFacade(): ProductMeasurementUnitToEventFacadeInterface
     {
         return $this->getProvidedDependency(ProductMeasurementUnitDependencyProvider::FACADE_EVENT);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Dependency\Facade\ProductMeasurementUnitToGlossaryFacadeInterface
-     */
     public function getGlossaryFacade(): ProductMeasurementUnitToGlossaryFacadeInterface
     {
         return $this->getProvidedDependency(ProductMeasurementUnitDependencyProvider::FACADE_GLOSSARY);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Model\CartChange\CartChangeExpanderInterface
-     */
     public function createCartChangeExpander(): CartChangeExpanderInterface
     {
         return new CartChangeExpander(
@@ -189,9 +147,6 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\CartChange\Checker\ItemProductMeasurementSalesUnitCheckerInterface
-     */
     public function createItemProductMeasurementSalesUnitChecker(): ItemProductMeasurementSalesUnitCheckerInterface
     {
         return new ItemProductMeasurementSalesUnitChecker(
@@ -200,9 +155,6 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Installer\ProductMeasurementUnitInstallerInterface
-     */
     public function createProductMeasurementUnitInstaller(): ProductMeasurementUnitInstallerInterface
     {
         return new ProductMeasurementUnitInstaller(
@@ -225,9 +177,6 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Model\Order\OrderItemExpanderInterface
-     */
     public function createOrderItemExpander(): OrderItemExpanderInterface
     {
         return new OrderItemExpander(
@@ -236,9 +185,6 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Model\Translation\ProductMeasurementUnitTranslationExpanderInterface
-     */
     public function createProductMeasurementUnitTranslationExpander(): ProductMeasurementUnitTranslationExpanderInterface
     {
         return new ProductMeasurementUnitTranslationExpander(
@@ -246,9 +192,6 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\CartChange\CartChangeSalesUnitExpanderInterface
-     */
     public function createCartChangeSalesUnitExpander(): CartChangeSalesUnitExpanderInterface
     {
         return new CartChangeSalesUnitExpander(
@@ -257,17 +200,11 @@ class ProductMeasurementUnitBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Business\Reader\ProductMeasurementUnitReaderInterface
-     */
     public function createProductMeasurementUnitReader(): ProductMeasurementUnitReaderInterface
     {
         return new ProductMeasurementUnitReader($this->getRepository());
     }
 
-    /**
-     * @return \Spryker\Zed\ProductMeasurementUnit\Dependency\Facade\ProductMeasurementUnitToStoreFacadeInterface
-     */
     public function getStoreFacade(): ProductMeasurementUnitToStoreFacadeInterface
     {
         return $this->getProvidedDependency(ProductMeasurementUnitDependencyProvider::FACADE_STORE);

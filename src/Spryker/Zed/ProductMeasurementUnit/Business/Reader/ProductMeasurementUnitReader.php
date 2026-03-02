@@ -16,9 +16,6 @@ class ProductMeasurementUnitReader implements ProductMeasurementUnitReaderInterf
      */
     protected $productMeasurementUnitRepository;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository
-     */
     public function __construct(ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository)
     {
         $this->productMeasurementUnitRepository = $productMeasurementUnitRepository;

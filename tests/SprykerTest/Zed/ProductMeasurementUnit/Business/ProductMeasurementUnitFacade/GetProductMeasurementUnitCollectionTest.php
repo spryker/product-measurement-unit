@@ -39,9 +39,6 @@ class GetProductMeasurementUnitCollectionTest extends Unit
         'conversionRate' => 1.0,
     ];
 
-    /**
-     * @return void
-     */
     public function testReturnsEmptyArrayForInvalidCode(): void
     {
         // Arrange
@@ -58,9 +55,6 @@ class GetProductMeasurementUnitCollectionTest extends Unit
         $this->assertCount(0, $productMeasurementUnitCollectionTransfer->getProductMeasurementUnits());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsItemByCode(): void
     {
         // Arrange

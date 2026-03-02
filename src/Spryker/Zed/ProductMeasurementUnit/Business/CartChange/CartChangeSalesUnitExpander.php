@@ -25,10 +25,6 @@ class CartChangeSalesUnitExpander implements CartChangeSalesUnitExpanderInterfac
      */
     protected $storeFacade;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository
-     * @param \Spryker\Zed\ProductMeasurementUnit\Dependency\Facade\ProductMeasurementUnitToStoreFacadeInterface $storeFacade
-     */
     public function __construct(
         ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository,
         ProductMeasurementUnitToStoreFacadeInterface $storeFacade
@@ -37,11 +33,6 @@ class CartChangeSalesUnitExpander implements CartChangeSalesUnitExpanderInterfac
         $this->storeFacade = $storeFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartChangeTransfer $cartChangeTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartChangeTransfer
-     */
     public function expandItemsWithDefaultQuantitySalesUnit(CartChangeTransfer $cartChangeTransfer): CartChangeTransfer
     {
         $productConcreteSkus = $this->getProductConcreteSkus($cartChangeTransfer);
@@ -63,11 +54,6 @@ class CartChangeSalesUnitExpander implements CartChangeSalesUnitExpanderInterfac
         return $cartChangeTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartChangeTransfer $cartChangeTransfer
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     protected function getStoreTransfer(CartChangeTransfer $cartChangeTransfer): StoreTransfer
     {
         if ($cartChangeTransfer->getQuote() && $cartChangeTransfer->getQuote()->getStore()) {

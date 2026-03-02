@@ -49,9 +49,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
      */
     protected $productMeasurementUnitFacade;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -59,9 +56,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->productMeasurementUnitFacade = $this->tester->getLocator()->productMeasurementUnit()->facade();
     }
 
-    /**
-     * @return void
-     */
     public function testExpandItemGroupKeyWithSalesUnitReturnsOriginalGroupKeyWhenNoSalesUnitIsDefined(): void
     {
         // Assign
@@ -79,9 +73,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->assertSame($expectedResult, $actualResult);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandItemGroupKeyWithSalesUnitReturnsExpandedGroupKeyWhenSalesUnitIsDefined(): void
     {
         // Assign
@@ -131,9 +122,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->assertSame($expectedResult, $actualResult->getItems()[0]->getQuantitySalesUnit()->getValue());
     }
 
-    /**
-     * @return array
-     */
     public function calculateQuantityNormalizedSalesUnitValues(): array
     {
         // round(1st / 2nd * 3rd) = 4th
@@ -150,9 +138,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         ];
     }
 
-    /**
-     * @return void
-     */
     public function testFindProductMeasurementUnitEntitiesReturnsProductMeasurementUnitEntities(): void
     {
         // Assign
@@ -170,9 +155,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->assertSame($expectedCode, $actualCode);
     }
 
-    /**
-     * @return void
-     */
     public function testGetSalesUnitsByIdProductRetrievesAllProductRelatedSalesUnits(): void
     {
         // Assign
@@ -210,9 +192,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->assertEquals($expectedSalesUnitIds, $actualSalesUnitIds);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandCartChangeWithQuantitySalesUnitExpandsCartChangeWithQuantitySalesUnit(): void
     {
         // Assign
@@ -249,9 +228,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductMeasurementSalesUnitTransfer(): void
     {
         // Assign
@@ -278,9 +254,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->assertInstanceOf(ProductMeasurementSalesUnitTransfer::class, $productMeasurementSalesUnitTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderWithQuantitySalesUnit(): void
     {
         // Assign
@@ -293,9 +266,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->assertInstanceOf(OrderTransfer::class, $orderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandSalesOrderItem(): void
     {
         // Assign
@@ -334,9 +304,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->assertSame($quantitySalesUnitTransfer->getConversion(), $salesOrderItemEntity->getQuantityMeasurementUnitConversion());
     }
 
-    /**
-     * @return void
-     */
     public function testTranslateProductMeasurementSalesUnit(): void
     {
         // Assign
@@ -366,9 +333,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->assertInstanceOf(ProductMeasurementSalesUnitTransfer::class, $productMeasurementSalesUnitTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testFindFilteredProductMeasurementSalesUnitTransfers(): void
     {
         // Assign
@@ -408,9 +372,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->assertCount(1, $productMeasurementSalesUnitTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testCheckItemProductMeasurementSalesUnitWillReturnSuccessfulResponseWithEmptyCartChangeTransfer(): void
     {
         // Arrange
@@ -424,9 +385,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->assertCount(0, $cartPreCheckResponseTransfer->getMessages());
     }
 
-    /**
-     * @return void
-     */
     public function testCheckItemProductMeasurementSalesUnitWillReturnSuccessfulResponseWithCorrectSalesUnitId(): void
     {
         // Arrange
@@ -462,9 +420,6 @@ class ProductMeasurementUnitFacadeTest extends Unit
         $this->assertCount(0, $cartPreCheckResponseTransfer->getMessages());
     }
 
-    /**
-     * @return void
-     */
     public function testCheckItemProductMeasurementSalesUnitWillReturnResponseWithErrorWithWrongSalesUnitId(): void
     {
         // Arrange

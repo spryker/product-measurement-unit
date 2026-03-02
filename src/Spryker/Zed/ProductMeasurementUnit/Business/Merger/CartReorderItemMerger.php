@@ -20,20 +20,11 @@ class CartReorderItemMerger implements CartReorderItemMergerInterface
      */
     protected ProductMeasurementUnitItemExtractorInterface $productMeasurementUnitItemExtractor;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Business\Extractor\ProductMeasurementUnitItemExtractorInterface $productMeasurementUnitItemExtractor
-     */
     public function __construct(ProductMeasurementUnitItemExtractorInterface $productMeasurementUnitItemExtractor)
     {
         $this->productMeasurementUnitItemExtractor = $productMeasurementUnitItemExtractor;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     public function mergeProductMeasurementUnitItems(
         CartReorderRequestTransfer $cartReorderRequestTransfer,
         CartReorderTransfer $cartReorderTransfer

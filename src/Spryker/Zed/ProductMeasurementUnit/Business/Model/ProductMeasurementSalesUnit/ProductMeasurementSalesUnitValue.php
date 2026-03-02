@@ -71,11 +71,6 @@ class ProductMeasurementSalesUnitValue implements ProductMeasurementSalesUnitVal
         return $availabilityValue / $unitToAvailabilityConversion * $unitPrecision;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function calculateSalesUnitValueInQuote(QuoteTransfer $quoteTransfer): QuoteTransfer
     {
         foreach ($quoteTransfer->getItems() as $itemTransfer) {

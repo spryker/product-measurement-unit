@@ -24,10 +24,6 @@ class OrderItemExpander implements OrderItemExpanderInterface
      */
     protected $productMeasurementUnitTranslationExpander;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository
-     * @param \Spryker\Zed\ProductMeasurementUnit\Business\Model\Translation\ProductMeasurementUnitTranslationExpanderInterface $productMeasurementUnitTranslationExpander
-     */
     public function __construct(
         ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository,
         ProductMeasurementUnitTranslationExpanderInterface $productMeasurementUnitTranslationExpander
@@ -36,12 +32,6 @@ class OrderItemExpander implements OrderItemExpanderInterface
         $this->productMeasurementUnitTranslationExpander = $productMeasurementUnitTranslationExpander;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer $salesOrderItemEntity
-     *
-     * @return \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer
-     */
     public function expandOrderItem(
         ItemTransfer $itemTransfer,
         SpySalesOrderItemEntityTransfer $salesOrderItemEntity

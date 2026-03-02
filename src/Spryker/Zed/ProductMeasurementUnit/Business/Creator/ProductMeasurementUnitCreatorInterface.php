@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer;
 
 interface ProductMeasurementUnitCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer
-     */
     public function create(
         ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer
     ): ProductMeasurementUnitCollectionResponseTransfer;

@@ -42,10 +42,6 @@ class ItemProductMeasurementSalesUnitChecker implements ItemProductMeasurementSa
      */
     protected $storeFacade;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository
-     * @param \Spryker\Zed\ProductMeasurementUnit\Dependency\Facade\ProductMeasurementUnitToStoreFacadeInterface $storeFacade
-     */
     public function __construct(
         ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository,
         ProductMeasurementUnitToStoreFacadeInterface $storeFacade
@@ -54,11 +50,6 @@ class ItemProductMeasurementSalesUnitChecker implements ItemProductMeasurementSa
         $this->storeFacade = $storeFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartChangeTransfer $cartChangeTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartPreCheckResponseTransfer
-     */
     public function checkItemProductMeasurementSalesUnit(CartChangeTransfer $cartChangeTransfer): CartPreCheckResponseTransfer
     {
         $cartPreCheckResponseTransfer = (new CartPreCheckResponseTransfer())->setIsSuccess(true);
@@ -94,11 +85,6 @@ class ItemProductMeasurementSalesUnitChecker implements ItemProductMeasurementSa
         return $cartPreCheckResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartChangeTransfer $cartChangeTransfer
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     protected function getStoreTransfer(CartChangeTransfer $cartChangeTransfer): StoreTransfer
     {
         if ($cartChangeTransfer->getQuote() && $cartChangeTransfer->getQuote()->getStore()) {
@@ -156,11 +142,6 @@ class ItemProductMeasurementSalesUnitChecker implements ItemProductMeasurementSa
         return $productConcreteSkus;
     }
 
-    /**
-     * @param array $parameters
-     *
-     * @return \Generated\Shared\Transfer\MessageTransfer
-     */
     protected function createMessageTransfer(array $parameters): MessageTransfer
     {
         return (new MessageTransfer())

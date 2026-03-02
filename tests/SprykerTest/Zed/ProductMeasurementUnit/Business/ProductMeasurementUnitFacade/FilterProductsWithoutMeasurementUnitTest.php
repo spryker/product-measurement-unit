@@ -30,9 +30,6 @@ class FilterProductsWithoutMeasurementUnitTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testFilterProductsWithoutMeasurementUnitTestThrowsExceptionForMissingIdProductConcrete(): void
     {
         // Arrange
@@ -45,9 +42,6 @@ class FilterProductsWithoutMeasurementUnitTest extends Unit
         $this->tester->getFacade()->filterProductsWithoutMeasurementUnit($productConcreteTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testFilterProductsWithoutMeasurementUnitTestThrowsExceptionForMissingFkProductAbstract(): void
     {
         // Arrange
@@ -60,9 +54,6 @@ class FilterProductsWithoutMeasurementUnitTest extends Unit
         $this->tester->getFacade()->filterProductsWithoutMeasurementUnit($productConcreteTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testFilterProductsWithoutMeasurementUnitTestExcludesProductWithSalesUnit(): void
     {
         // Arrange
@@ -94,9 +85,6 @@ class FilterProductsWithoutMeasurementUnitTest extends Unit
         $this->assertCount(1, $productConcreteTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testFilterProductsWithoutMeasurementUnitTestExcludesProductWithBaseUnit(): void
     {
         // Arrange
@@ -122,9 +110,6 @@ class FilterProductsWithoutMeasurementUnitTest extends Unit
         $this->assertCount(1, $productConcreteTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testFilterProductsWithoutMeasurementUnitTestReturnsUnmodifiedArray(): void
     {
         // Arrange

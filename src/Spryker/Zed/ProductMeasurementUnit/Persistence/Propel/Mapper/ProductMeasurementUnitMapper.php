@@ -21,12 +21,6 @@ use Propel\Runtime\Collection\Collection;
 
 class ProductMeasurementUnitMapper implements ProductMeasurementUnitMapperInterface
 {
-    /**
-     * @param \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementSalesUnit $productMeasurementSalesUnitEntity
-     * @param \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer
-     */
     public function mapProductMeasurementSalesUnitTransfer(
         SpyProductMeasurementSalesUnit $productMeasurementSalesUnitEntity,
         ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
@@ -54,12 +48,6 @@ class ProductMeasurementUnitMapper implements ProductMeasurementUnitMapperInterf
         return $productMeasurementSalesUnitTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementBaseUnit $productMeasurementBaseUnitEntity
-     * @param \Generated\Shared\Transfer\ProductMeasurementBaseUnitTransfer $productMeasurementBaseUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementBaseUnitTransfer
-     */
     public function mapProductMeasurementBaseUnitTransfer(
         SpyProductMeasurementBaseUnit $productMeasurementBaseUnitEntity,
         ProductMeasurementBaseUnitTransfer $productMeasurementBaseUnitTransfer
@@ -73,12 +61,6 @@ class ProductMeasurementUnitMapper implements ProductMeasurementUnitMapperInterf
         return $productMeasurementBaseUnitTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementUnit $productMeasurementUnitEntity
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitTransfer $productMeasurementUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer
-     */
     public function mapProductMeasurementUnitTransfer(
         SpyProductMeasurementUnit $productMeasurementUnitEntity,
         ProductMeasurementUnitTransfer $productMeasurementUnitTransfer
@@ -88,12 +70,6 @@ class ProductMeasurementUnitMapper implements ProductMeasurementUnitMapperInterf
         return $productMeasurementUnitTransfer;
     }
 
-    /**
-     * @param \Propel\Runtime\Collection\Collection $productMeasurementUnitEntities
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionTransfer $productMeasurementUnitCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionTransfer
-     */
     public function mapProductMeasurementUnitCollectionTransfer(
         Collection $productMeasurementUnitEntities,
         ProductMeasurementUnitCollectionTransfer $productMeasurementUnitCollectionTransfer
@@ -110,12 +86,6 @@ class ProductMeasurementUnitMapper implements ProductMeasurementUnitMapperInterf
         return $productMeasurementUnitCollectionTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementSalesUnit $productMeasurementSalesUnitEntity
-     * @param \Generated\Shared\Transfer\StoreRelationTransfer $storeRelationTransfer
-     *
-     * @return \Generated\Shared\Transfer\StoreRelationTransfer
-     */
     protected function mapProductMeasurementSalesUnitStoreRelationTransfer(
         SpyProductMeasurementSalesUnit $productMeasurementSalesUnitEntity,
         StoreRelationTransfer $storeRelationTransfer

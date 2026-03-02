@@ -50,9 +50,6 @@ class DeleteProductMeasurementUnitCollectionTest extends Unit
         'conversionRate' => 2.0,
     ];
 
-    /**
-     * @return void
-     */
     public function testDeletesExactlyRequestedItems(): void
     {
         // Arrange
@@ -75,9 +72,6 @@ class DeleteProductMeasurementUnitCollectionTest extends Unit
         $this->assertEquals(static::VALID_MEASUREMENT_UNIT_2['code'], $productMeasurementUnit2->getCode());
     }
 
-    /**
-     * @return void
-     */
     public function testDeletesNoItemsOnEmptyCriteria(): void
     {
         // Arrange
@@ -96,9 +90,6 @@ class DeleteProductMeasurementUnitCollectionTest extends Unit
         $this->assertEquals(static::VALID_MEASUREMENT_UNIT_1['code'], $productMeasurementUnit1->getCode());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotDeleteMeasurementUnitWithAssignedProducts(): void
     {
         // Arrange
@@ -123,11 +114,6 @@ class DeleteProductMeasurementUnitCollectionTest extends Unit
         $this->assertEquals($spyProductMeasurementUnitEntityTransfer->getCode(), $productMeasurementUnit1->getCode());
     }
 
-    /**
-     * @param string $code
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer
-     */
     protected function getProductMeasurementUnitTransferByCode(string $code): ProductMeasurementUnitTransfer
     {
         $productMeasurementUnitConditionsTransfer = (new ProductMeasurementUnitConditionsTransfer())

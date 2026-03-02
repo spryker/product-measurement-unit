@@ -33,20 +33,10 @@ interface ProductMeasurementUnitRepositoryInterface
      */
     public function countProductAssignments(int $idProductMeasurementUnit): int;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCriteriaTransfer $productMeasurementUnitCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionTransfer
-     */
     public function getProductMeasurementUnitCollection(
         ProductMeasurementUnitCriteriaTransfer $productMeasurementUnitCriteriaTransfer
     ): ProductMeasurementUnitCollectionTransfer;
 
-    /**
-     * @param int $idProductMeasurementSalesUnit
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer
-     */
     public function getProductMeasurementSalesUnitTransfer(int $idProductMeasurementSalesUnit): ProductMeasurementSalesUnitTransfer;
 
     /**
@@ -68,11 +58,6 @@ interface ProductMeasurementUnitRepositoryInterface
      */
     public function getProductMeasurementSalesUnitTransfers(): array;
 
-    /**
-     * @param int $idProductMeasurementBaseUnit
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementBaseUnitTransfer
-     */
     public function getProductMeasurementBaseUnitTransfer(int $idProductMeasurementBaseUnit): ProductMeasurementBaseUnitTransfer;
 
     /**

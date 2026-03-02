@@ -39,11 +39,6 @@ class ProductMeasurementUnitDataHelper extends Module
         return $productMeasurementUnitEntity;
     }
 
-    /**
-     * @param array $override
-     *
-     * @return \Generated\Shared\Transfer\SpyProductMeasurementUnitEntityTransfer
-     */
     public function haveProductMeasurementUnit(array $override = []): SpyProductMeasurementUnitEntityTransfer
     {
         $productMeasurementUnitEntity = (new SpyProductMeasurementUnitEntityBuilder())->build();
@@ -58,12 +53,6 @@ class ProductMeasurementUnitDataHelper extends Module
         return $productMeasurementUnitEntity;
     }
 
-    /**
-     * @param int $idProductAbstract
-     * @param int $idProductMeasurementUnit
-     *
-     * @return \Generated\Shared\Transfer\SpyProductMeasurementBaseUnitEntityTransfer
-     */
     public function haveProductMeasurementBaseUnit(int $idProductAbstract, int $idProductMeasurementUnit): SpyProductMeasurementBaseUnitEntityTransfer
     {
         $baseUnitEntity = (new SpyProductMeasurementBaseUnitEntityTransfer())
@@ -105,11 +94,6 @@ class ProductMeasurementUnitDataHelper extends Module
         return $salesUnitEntity;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SpyProductMeasurementSalesUnitEntityTransfer $salesUnitEntityTransfer
-     *
-     * @return \Generated\Shared\Transfer\SpyProductMeasurementSalesUnitEntityTransfer
-     */
     protected function storeProductMeasurementSalesUnit(
         SpyProductMeasurementSalesUnitEntityTransfer $salesUnitEntityTransfer
     ): SpyProductMeasurementSalesUnitEntityTransfer {
@@ -125,11 +109,6 @@ class ProductMeasurementUnitDataHelper extends Module
         return $salesUnitEntityTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SpyProductMeasurementSalesUnitEntityTransfer $salesUnitEntityTransfer
-     *
-     * @return void
-     */
     protected function storeProductMeasurementSalesUnitStore(SpyProductMeasurementSalesUnitEntityTransfer $salesUnitEntityTransfer): void
     {
         $productMeasurementSalesUnitStore = new SpyProductMeasurementSalesUnitStore();
@@ -140,11 +119,6 @@ class ProductMeasurementUnitDataHelper extends Module
         $this->debug(sprintf('Inserted sales unit store for product: %d', $salesUnitEntityTransfer->getFkProduct()));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SpyProductMeasurementBaseUnitEntityTransfer $baseUnitEntity
-     *
-     * @return \Generated\Shared\Transfer\SpyProductMeasurementBaseUnitEntityTransfer
-     */
     protected function storeProductMeasurementBaseUnit(SpyProductMeasurementBaseUnitEntityTransfer $baseUnitEntity): SpyProductMeasurementBaseUnitEntityTransfer
     {
         $spyBaseUnitEntity = $this->getProductMeasurementBaseUnitQuery()
@@ -161,11 +135,6 @@ class ProductMeasurementUnitDataHelper extends Module
         return $baseUnitEntity;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SpyProductMeasurementUnitEntityTransfer $productMeasurementUnitEntity
-     *
-     * @return \Generated\Shared\Transfer\SpyProductMeasurementUnitEntityTransfer
-     */
     protected function storeProductMeasurementUnit(
         SpyProductMeasurementUnitEntityTransfer $productMeasurementUnitEntity
     ): SpyProductMeasurementUnitEntityTransfer {
@@ -183,11 +152,6 @@ class ProductMeasurementUnitDataHelper extends Module
         return $productMeasurementUnitEntity;
     }
 
-    /**
-     * @param int $idProductMeasurementBaseUnit
-     *
-     * @return void
-     */
     protected function cleanupProductMeasurementBaseUnit(int $idProductMeasurementBaseUnit): void
     {
         $this->debug(sprintf('Deleting product measurement base unit: %d', $idProductMeasurementBaseUnit));
@@ -197,11 +161,6 @@ class ProductMeasurementUnitDataHelper extends Module
             ->delete();
     }
 
-    /**
-     * @param int $idProductMeasurementSalesUnit
-     *
-     * @return void
-     */
     protected function cleanupProductMeasurementSalesUnit(int $idProductMeasurementSalesUnit): void
     {
         $this->debug(sprintf('Deleting product measurement sales unit: %d', $idProductMeasurementSalesUnit));
@@ -211,11 +170,6 @@ class ProductMeasurementUnitDataHelper extends Module
             ->delete();
     }
 
-    /**
-     * @param int $idProductMeasurementUnit
-     *
-     * @return void
-     */
     protected function cleanupProductMeasurementUnit(int $idProductMeasurementUnit): void
     {
         $this->debug(sprintf('Deleting product measurement unit: %d', $idProductMeasurementUnit));
@@ -225,25 +179,16 @@ class ProductMeasurementUnitDataHelper extends Module
             ->delete();
     }
 
-    /**
-     * @return \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementBaseUnitQuery
-     */
     protected function getProductMeasurementBaseUnitQuery(): SpyProductMeasurementBaseUnitQuery
     {
         return SpyProductMeasurementBaseUnitQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementSalesUnitQuery
-     */
     protected function getProductMeasurementSalesUnitQuery(): SpyProductMeasurementSalesUnitQuery
     {
         return SpyProductMeasurementSalesUnitQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementUnitQuery
-     */
     protected function getProductMeasurementUnitQuery(): SpyProductMeasurementUnitQuery
     {
         return SpyProductMeasurementUnitQuery::create();

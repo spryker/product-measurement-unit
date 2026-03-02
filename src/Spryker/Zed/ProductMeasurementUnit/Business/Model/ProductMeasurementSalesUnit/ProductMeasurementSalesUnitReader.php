@@ -30,10 +30,6 @@ class ProductMeasurementSalesUnitReader implements ProductMeasurementSalesUnitRe
      */
     protected $utilMeasurementUnitConversionService;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository
-     * @param \Spryker\Zed\ProductMeasurementUnit\Dependency\Service\ProductMeasurementUnitToUtilMeasurementUnitConversionServiceInterface $utilMeasurementUnitConversionService
-     */
     public function __construct(
         ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository,
         ProductMeasurementUnitToUtilMeasurementUnitConversionServiceInterface $utilMeasurementUnitConversionService
@@ -91,11 +87,6 @@ class ProductMeasurementSalesUnitReader implements ProductMeasurementSalesUnitRe
         return $productMeasurementSalesUnitTransfers;
     }
 
-    /**
-     * @param int $idProductMeasurementSalesUnit
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer
-     */
     public function getProductMeasurementSalesUnitTransfer(int $idProductMeasurementSalesUnit): ProductMeasurementSalesUnitTransfer
     {
         $productMeasurementSalesUnitTransfer = $this->productMeasurementUnitRepository
@@ -123,11 +114,6 @@ class ProductMeasurementSalesUnitReader implements ProductMeasurementSalesUnitRe
         return $productMeasurementSalesUnitTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
-     *
-     * @return void
-     */
     protected function setDefaults(ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer): void
     {
         if ($productMeasurementSalesUnitTransfer->getPrecision() === null) {
@@ -139,11 +125,6 @@ class ProductMeasurementSalesUnitReader implements ProductMeasurementSalesUnitRe
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
-     *
-     * @return int
-     */
     protected function getDefaultPrecision(ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer): int
     {
         $productMeasurementSalesUnitTransfer->getProductMeasurementUnit()->requireDefaultPrecision();
@@ -151,11 +132,6 @@ class ProductMeasurementSalesUnitReader implements ProductMeasurementSalesUnitRe
         return $productMeasurementSalesUnitTransfer->getProductMeasurementUnit()->getDefaultPrecision();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer
-     *
-     * @return float
-     */
     protected function getDefaultConversion(ProductMeasurementSalesUnitTransfer $productMeasurementSalesUnitTransfer): float
     {
         $productMeasurementBaseUnitTransfer = $this

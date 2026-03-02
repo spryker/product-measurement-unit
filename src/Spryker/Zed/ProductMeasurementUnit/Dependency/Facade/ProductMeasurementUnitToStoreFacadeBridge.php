@@ -32,11 +32,6 @@ class ProductMeasurementUnitToStoreFacadeBridge implements ProductMeasurementUni
         return $this->storeFacade->getCurrentStore();
     }
 
-    /**
-     * @param string $storeName
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     public function getStoreByName(string $storeName): StoreTransfer
     {
         return $this->storeFacade->getStoreByName($storeName);

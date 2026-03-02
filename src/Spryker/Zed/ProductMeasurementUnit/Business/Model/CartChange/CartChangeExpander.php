@@ -17,20 +17,12 @@ class CartChangeExpander implements CartChangeExpanderInterface
      */
     protected $productMeasurementSalesUnitReader;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Business\Model\ProductMeasurementSalesUnit\ProductMeasurementSalesUnitReaderInterface $productMeasurementSalesUnitReader
-     */
     public function __construct(
         ProductMeasurementSalesUnitReaderInterface $productMeasurementSalesUnitReader
     ) {
         $this->productMeasurementSalesUnitReader = $productMeasurementSalesUnitReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartChangeTransfer $cartChangeTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartChangeTransfer
-     */
     public function expandWithQuantitySalesUnit(CartChangeTransfer $cartChangeTransfer): CartChangeTransfer
     {
         foreach ($cartChangeTransfer->getItems() as $itemTransfer) {

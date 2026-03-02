@@ -16,10 +16,5 @@ interface ProductMeasurementUnitToStoreFacadeInterface
      */
     public function getCurrentStore();
 
-    /**
-     * @param string $storeName
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     public function getStoreByName(string $storeName): StoreTransfer;
 }

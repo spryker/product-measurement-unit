@@ -78,11 +78,6 @@ class ProductMeasurementUnitRepository extends AbstractRepository implements Pro
         return $existingCodes->getArrayCopy();
     }
 
-    /**
-     * @param int $idProductMeasurementUnit
-     *
-     * @return int
-     */
     public function countProductAssignments(int $idProductMeasurementUnit): int
     {
         $abstractCount = $this->getFactory()
@@ -98,11 +93,6 @@ class ProductMeasurementUnitRepository extends AbstractRepository implements Pro
         return $abstractCount + $concreteCount;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCriteriaTransfer $productMeasurementUnitCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionTransfer
-     */
     public function getProductMeasurementUnitCollection(
         ProductMeasurementUnitCriteriaTransfer $productMeasurementUnitCriteriaTransfer
     ): ProductMeasurementUnitCollectionTransfer {
@@ -126,12 +116,6 @@ class ProductMeasurementUnitRepository extends AbstractRepository implements Pro
         return $productMeasurementUnitCollectionTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\ProductMeasurementUnit\Persistence\SpyProductMeasurementUnitQuery $productMeasurementUnitQuery
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCriteriaTransfer $productMeasurementUnitCriteriaTransfer
-     *
-     * @return \Propel\Runtime\ActiveQuery\ModelCriteria
-     */
     protected function applyProductMeasurementUnitCriteria(
         SpyProductMeasurementUnitQuery $productMeasurementUnitQuery,
         ProductMeasurementUnitCriteriaTransfer $productMeasurementUnitCriteriaTransfer
@@ -592,12 +576,6 @@ class ProductMeasurementUnitRepository extends AbstractRepository implements Pro
         return $indexedProductMeasurementSalesUnitIds;
     }
 
-    /**
-     * @param \Propel\Runtime\ActiveQuery\ModelCriteria $modelCriteria
-     * @param \Generated\Shared\Transfer\FilterTransfer|null $filterTransfer
-     *
-     * @return \Propel\Runtime\ActiveQuery\ModelCriteria
-     */
     public function buildQueryFromCriteria(ModelCriteria $modelCriteria, ?FilterTransfer $filterTransfer = null): ModelCriteria
     {
         $modelCriteria = parent::buildQueryFromCriteria($modelCriteria, $filterTransfer);

@@ -33,11 +33,6 @@ class ProductMeasurementUnitInstaller implements ProductMeasurementUnitInstaller
      */
     protected $eventFacade;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\ProductMeasurementUnitConfig $config
-     * @param \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitEntityManagerInterface $entityManager
-     * @param \Spryker\Zed\ProductMeasurementUnit\Dependency\Facade\ProductMeasurementUnitToEventFacadeInterface $eventFacade
-     */
     public function __construct(
         ProductMeasurementUnitConfig $config,
         ProductMeasurementUnitEntityManagerInterface $entityManager,
@@ -48,9 +43,6 @@ class ProductMeasurementUnitInstaller implements ProductMeasurementUnitInstaller
         $this->eventFacade = $eventFacade;
     }
 
-    /**
-     * @return void
-     */
     public function install(): void
     {
         $this->getTransactionHandler()->handleTransaction(function () {
@@ -58,9 +50,6 @@ class ProductMeasurementUnitInstaller implements ProductMeasurementUnitInstaller
         });
     }
 
-    /**
-     * @return void
-     */
     protected function executeInstallTransaction(): void
     {
         $productInfrastructuralMeasurementUnits = $this->config->getInfrastructuralMeasurementUnits();
@@ -74,11 +63,6 @@ class ProductMeasurementUnitInstaller implements ProductMeasurementUnitInstaller
         $this->publishMeasurementUnits($savedEntityIds);
     }
 
-    /**
-     * @param array $savedEntityIds
-     *
-     * @return void
-     */
     protected function publishMeasurementUnits(array $savedEntityIds): void
     {
         $savedEntityIds = array_unique($savedEntityIds);

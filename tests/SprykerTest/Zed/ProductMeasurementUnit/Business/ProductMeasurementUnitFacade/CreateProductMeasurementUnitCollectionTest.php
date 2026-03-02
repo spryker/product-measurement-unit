@@ -30,9 +30,6 @@ class CreateProductMeasurementUnitCollectionTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testCanCreateProductMeasurementUnitCollection(): void
     {
         // Arrange
@@ -58,9 +55,6 @@ class CreateProductMeasurementUnitCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testCanNotCreateProductMeasurementUnitWithAlreadyExistingCode(): void
     {
         // Arrange

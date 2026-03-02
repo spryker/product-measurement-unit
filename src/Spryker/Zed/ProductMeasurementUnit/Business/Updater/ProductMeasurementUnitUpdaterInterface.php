@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer;
 
 interface ProductMeasurementUnitUpdaterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer
-     */
     public function update(
         ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer
     ): ProductMeasurementUnitCollectionResponseTransfer;

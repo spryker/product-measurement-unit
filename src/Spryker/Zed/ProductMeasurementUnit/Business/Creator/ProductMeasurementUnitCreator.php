@@ -17,21 +17,12 @@ class ProductMeasurementUnitCreator implements ProductMeasurementUnitCreatorInte
 {
     use TransactionTrait;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Business\Validator\ProductMeasurementUnitValidatorInterface $productMeasurementUnitValidator
-     * @param \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitEntityManagerInterface $productMeasurementUnitEntityManager
-     */
     public function __construct(
         protected ProductMeasurementUnitValidatorInterface $productMeasurementUnitValidator,
         protected ProductMeasurementUnitEntityManagerInterface $productMeasurementUnitEntityManager
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer
-     */
     public function create(
         ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer
     ): ProductMeasurementUnitCollectionResponseTransfer {
@@ -40,11 +31,6 @@ class ProductMeasurementUnitCreator implements ProductMeasurementUnitCreatorInte
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer
-     */
     protected function executeCreateTransaction(
         ProductMeasurementUnitCollectionRequestTransfer $productMeasurementUnitCollectionRequestTransfer
     ): ProductMeasurementUnitCollectionResponseTransfer {

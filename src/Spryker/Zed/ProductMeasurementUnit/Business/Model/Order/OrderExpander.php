@@ -31,10 +31,6 @@ class OrderExpander implements OrderExpanderInterface
      */
     protected $productMeasurementUnitTranslationExpander;
 
-    /**
-     * @param \Spryker\Zed\ProductMeasurementUnit\Persistence\ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository
-     * @param \Spryker\Zed\ProductMeasurementUnit\Business\Model\Translation\ProductMeasurementUnitTranslationExpanderInterface $productMeasurementUnitTranslationExpander
-     */
     public function __construct(
         ProductMeasurementUnitRepositoryInterface $productMeasurementUnitRepository,
         ProductMeasurementUnitTranslationExpanderInterface $productMeasurementUnitTranslationExpander
@@ -43,11 +39,6 @@ class OrderExpander implements OrderExpanderInterface
         $this->productMeasurementUnitTranslationExpander = $productMeasurementUnitTranslationExpander;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function expandOrderWithQuantitySalesUnit(OrderTransfer $orderTransfer): OrderTransfer
     {
         $salesOrderItemEntityTransfers = $this->productMeasurementUnitRepository
@@ -71,11 +62,6 @@ class OrderExpander implements OrderExpanderInterface
         return $orderTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer $salesOrderItemEntityTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer
-     */
     protected function hydrateQuantitySalesUnitTransfer(SpySalesOrderItemEntityTransfer $salesOrderItemEntityTransfer): ProductMeasurementSalesUnitTransfer
     {
         $productMeasurementSalesUnitTransfer = new ProductMeasurementSalesUnitTransfer();
@@ -96,12 +82,6 @@ class OrderExpander implements OrderExpanderInterface
         return $productMeasurementSalesUnitTransfer;
     }
 
-    /**
-     * @param string|null $productMeasurementUnitName
-     * @param string|null $productMeasurementUnitCode
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer
-     */
     protected function createProductMeasurementUnitTransfer(
         ?string $productMeasurementUnitName,
         ?string $productMeasurementUnitCode = null
@@ -116,11 +96,6 @@ class OrderExpander implements OrderExpanderInterface
         return $productMeasurementUnitTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer $salesOrderItemEntityTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementBaseUnitTransfer
-     */
     protected function createProductMeasurementBaseUnitTransfer(
         SpySalesOrderItemEntityTransfer $salesOrderItemEntityTransfer
     ): ProductMeasurementBaseUnitTransfer {
@@ -132,12 +107,6 @@ class OrderExpander implements OrderExpanderInterface
         return $productMeasurementBaseUnitTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param int $idSalesOrderItem
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer|null
-     */
     protected function findItemTransferByIdSalesOrderItem(OrderTransfer $orderTransfer, int $idSalesOrderItem): ?ItemTransfer
     {
         foreach ($orderTransfer->getItems() as $itemTransfer) {

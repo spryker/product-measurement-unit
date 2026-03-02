@@ -13,12 +13,6 @@ use Propel\Runtime\Collection\Collection;
 
 interface SalesOrderItemMapperInterface
 {
-    /**
-     * @param \Orm\Zed\Sales\Persistence\SpySalesOrderItem $salesOrderItem
-     * @param \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer $spySalesOrderItemEntityTransfer
-     *
-     * @return \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer
-     */
     public function mapSalesOrderItemTransfer(
         SpySalesOrderItem $salesOrderItem,
         SpySalesOrderItemEntityTransfer $spySalesOrderItemEntityTransfer

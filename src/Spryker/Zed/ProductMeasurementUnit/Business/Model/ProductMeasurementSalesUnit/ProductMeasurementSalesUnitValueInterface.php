@@ -12,17 +12,7 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface ProductMeasurementSalesUnitValueInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return int
-     */
     public function calculateQuantityNormalizedSalesUnitValue(ItemTransfer $itemTransfer): int;
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function calculateSalesUnitValueInQuote(QuoteTransfer $quoteTransfer): QuoteTransfer;
 }

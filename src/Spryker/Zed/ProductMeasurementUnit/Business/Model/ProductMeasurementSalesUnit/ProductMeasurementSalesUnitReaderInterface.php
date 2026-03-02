@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer;
 
 interface ProductMeasurementSalesUnitReaderInterface
 {
-    /**
-     * @param int $idProductMeasurementSalesUnit
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementSalesUnitTransfer
-     */
     public function getProductMeasurementSalesUnitTransfer(int $idProductMeasurementSalesUnit): ProductMeasurementSalesUnitTransfer;
 
     /**

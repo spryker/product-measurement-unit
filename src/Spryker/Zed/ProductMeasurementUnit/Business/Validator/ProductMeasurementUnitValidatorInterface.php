@@ -13,13 +13,6 @@ use Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer;
 
 interface ProductMeasurementUnitValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionRequestTransfer $requestTransfer
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer $responseTransfer
-     * @param array $invalidCodes
-     *
-     * @return void
-     */
     public function validatePrecision(
         ProductMeasurementUnitCollectionRequestTransfer $requestTransfer,
         ProductMeasurementUnitCollectionResponseTransfer $responseTransfer,
@@ -56,11 +49,6 @@ interface ProductMeasurementUnitValidatorInterface
         array &$invalidCodes
     ): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionDeleteCriteriaTransfer $productMeasurementUnitCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer
-     */
     public function validateDeleteCriteria(
         ProductMeasurementUnitCollectionDeleteCriteriaTransfer $productMeasurementUnitCollectionDeleteCriteriaTransfer
     ): ProductMeasurementUnitCollectionResponseTransfer;

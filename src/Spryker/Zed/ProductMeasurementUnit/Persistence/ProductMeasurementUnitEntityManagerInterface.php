@@ -20,11 +20,6 @@ interface ProductMeasurementUnitEntityManagerInterface
      */
     public function deleteProductMeasurementUnit(int $idProductMeasurementUnit): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitTransfer $productMeasurementUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer
-     */
     public function saveProductMeasurementUnit(
         ProductMeasurementUnitTransfer $productMeasurementUnitTransfer
     ): ProductMeasurementUnitTransfer;

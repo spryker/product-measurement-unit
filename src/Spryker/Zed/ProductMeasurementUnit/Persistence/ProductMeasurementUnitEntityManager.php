@@ -15,11 +15,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class ProductMeasurementUnitEntityManager extends AbstractEntityManager implements ProductMeasurementUnitEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitTransfer $productMeasurementUnitTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer
-     */
     public function saveProductMeasurementUnit(
         ProductMeasurementUnitTransfer $productMeasurementUnitTransfer
     ): ProductMeasurementUnitTransfer {
@@ -35,11 +30,6 @@ class ProductMeasurementUnitEntityManager extends AbstractEntityManager implemen
         return $productMeasurementUnitTransfer;
     }
 
-    /**
-     * @param int $idProductMeasurementUnit
-     *
-     * @return void
-     */
     public function deleteProductMeasurementUnit(int $idProductMeasurementUnit): void
     {
         $this->getFactory()

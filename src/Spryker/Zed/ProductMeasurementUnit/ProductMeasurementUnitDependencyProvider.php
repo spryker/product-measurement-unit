@@ -45,11 +45,6 @@ class ProductMeasurementUnitDependencyProvider extends AbstractBundleDependencyP
      */
     public const PROPEL_QUERY_SALES_ORDER_ITEM = 'PROPEL_QUERY_SALES_ORDER_ITEM';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -63,11 +58,6 @@ class ProductMeasurementUnitDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function providePersistenceLayerDependencies(Container $container): Container
     {
         $container = parent::providePersistenceLayerDependencies($container);
@@ -77,11 +67,6 @@ class ProductMeasurementUnitDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addEventFacade(Container $container): Container
     {
         $container->set(static::FACADE_EVENT, function (Container $container) {
@@ -91,11 +76,6 @@ class ProductMeasurementUnitDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilMeasurementUnitConversionService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_MEASUREMENT_UNIT_CONVERSION, function (Container $container) {
@@ -105,11 +85,6 @@ class ProductMeasurementUnitDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderItemPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_SALES_ORDER_ITEM, $container->factory(function () {
@@ -119,11 +94,6 @@ class ProductMeasurementUnitDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addGlossaryFacade(Container $container): Container
     {
         $container->set(static::FACADE_GLOSSARY, function (Container $container) {
@@ -133,11 +103,6 @@ class ProductMeasurementUnitDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORE, function (Container $container) {

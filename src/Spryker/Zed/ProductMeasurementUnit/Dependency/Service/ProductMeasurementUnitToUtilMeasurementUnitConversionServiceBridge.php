@@ -22,12 +22,6 @@ class ProductMeasurementUnitToUtilMeasurementUnitConversionServiceBridge impleme
         $this->utilMeasurementUnitConversionService = $utilMeasurementUnitConversionService;
     }
 
-    /**
-     * @param string $fromCode
-     * @param string $toCode
-     *
-     * @return float
-     */
     public function getMeasurementUnitExchangeRatio(string $fromCode, string $toCode): float
     {
         return $this->utilMeasurementUnitConversionService->getMeasurementUnitExchangeRatio($fromCode, $toCode);

@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer;
 
 interface ProductMeasurementUnitDeleterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitCollectionDeleteCriteriaTransfer $productMeasurementUnitCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitCollectionResponseTransfer
-     */
     public function delete(
         ProductMeasurementUnitCollectionDeleteCriteriaTransfer $productMeasurementUnitCollectionDeleteCriteriaTransfer
     ): ProductMeasurementUnitCollectionResponseTransfer;
