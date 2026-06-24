@@ -13,6 +13,8 @@ use Spryker\Zed\Kernel\AbstractBundleConfig;
 class ProductMeasurementUnitConfig extends AbstractBundleConfig
 {
     /**
+     * @api
+     *
      * Default measurement unit code.
      *
      * @var string
@@ -20,6 +22,8 @@ class ProductMeasurementUnitConfig extends AbstractBundleConfig
     public const DEFAULT_MEASUREMENT_UNIT_CODE = 'ITEM';
 
     /**
+     * @api
+     *
      * Infrastructural measurement units list.
      *
      * @var array<array<string, mixed>>
