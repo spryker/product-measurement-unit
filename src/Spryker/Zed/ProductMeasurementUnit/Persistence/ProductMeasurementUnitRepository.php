@@ -185,7 +185,8 @@ class ProductMeasurementUnitRepository extends AbstractRepository implements Pro
             ->joinWith('ProductMeasurementUnit salesUnitMeasurementUnit')
             ->joinWith('ProductMeasurementBaseUnit.ProductMeasurementUnit baseUnitMeasurementUnit')
             ->leftJoinWithSpyProductMeasurementSalesUnitStore()
-            ->leftJoinWith('SpyProductMeasurementSalesUnitStore.SpyStore');
+            ->leftJoinWith('SpyProductMeasurementSalesUnitStore.SpyStore')
+            ->orderByIdProductMeasurementSalesUnit();
 
         $productMeasurementSalesUnitEntityCollection = $query->find();
 
